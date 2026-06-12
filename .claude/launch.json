@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "altalogik-reviews",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "C:\\Users\\ervin\\Downloads\\altalogik-reviews (1)\\altalogik-reviews\\altalogik-reviews",
+      "port": 5173
+    }
+  ]
+}

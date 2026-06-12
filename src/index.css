@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────
+   Tokens — Altalogik brand
+   ───────────────────────────────────────────── */
+:root {
+  --bg: #070b16;
+  --bg-2: #0a1020;
+  --surface: #0f1626;
+  --surface-2: #141d31;
+  --surface-hi: #1a2540;
+
+  --line: rgba(120, 160, 220, 0.12);
+  --line-strong: rgba(120, 160, 220, 0.22);
+  --line-bright: rgba(120, 160, 220, 0.35);
+
+  --text: #eaf0fb;
+  --muted: #8a96b4;
+  --muted-2: #5f6c8a;
+
+  --teal: #1ed8c6;
+  --blue-mid: #4f8df7;
+  --blue: #2d5bff;
+
+  --grad: linear-gradient(115deg, #1ed8c6 0%, #4f8df7 48%, #2d5bff 100%);
+  --grad-soft: linear-gradient(115deg, rgba(30,216,198,0.16), rgba(45,91,255,0.16));
+  --grad-glow: 0 8px 30px rgba(45, 91, 255, 0.32);
+
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg text-text font-sans antialiased;
+    background:
+      radial-gradient(1100px 600px at 10% -10%, rgba(30,216,198,0.08), transparent 60%),
+      radial-gradient(1000px 600px at 95% 8%, rgba(45,91,255,0.10), transparent 60%),
+      var(--bg);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-text;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+  ::selection {
+    background: rgba(45, 91, 255, 0.45);
+    color: #fff;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* Gradient text helper — usato per metriche e numeri grandi */
+.grad-text {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ─────────────────────────────────────────────
+   Card (surface + line) — usato in StepVideos e StepCaseStudies
+   ───────────────────────────────────────────── */
+.card-brick {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+.card-brick:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-3px);
+  background: var(--surface-2);
+  box-shadow: 0 12px 36px rgba(45, 91, 255, 0.10);
+}
+
+/* ─────────────────────────────────────────────
+   Reveal on scroll
+   ───────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────
+   Slot placeholders (dark navy) — MediaSlot + ImageSlot
+   ───────────────────────────────────────────── */
+.slot {
+  position: relative;
+  border-radius: 14px;
+  background:
+    radial-gradient(420px 200px at 15% 0%, rgba(30, 216, 198, 0.08), transparent 60%),
+    radial-gradient(420px 240px at 100% 100%, rgba(45, 91, 255, 0.10), transparent 60%),
+    linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  isolation: isolate;
+}
+.slot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.04) 50%,
+    transparent 70%
+  );
+  background-size: 220% 100%;
+  background-position: 100% 0;
+  animation: shimmer 5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes shimmer {
+  0% { background-position: 120% 0; }
+  100% { background-position: -20% 0; }
+}
+.slot-label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 4px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: rgba(7, 11, 22, 0.55);
+  backdrop-filter: blur(6px);
+  z-index: 2;
+}
+
+/* Play orb (video placeholder) */
+.play-orb {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+}
+.play-orb > div {
+  width: 72px;
+  height: 72px;
+  border-radius: 9999px;
+  background: var(--grad);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 12px 30px rgba(45, 91, 255, 0.45);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.slot:hover .play-orb > div {
+  transform: scale(1.06);
+  box-shadow: 0 16px 40px rgba(45, 91, 255, 0.55);
+}
+.play-orb svg {
+  width: 26px;
+  height: 26px;
+  fill: #04121a;
+  margin-left: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible { opacity: 1; transform: none; transition: none; }
+  .slot::after { animation: none; }
+}
+
+/* ─────────────────────────────────────────────
+   "Vedi altro" — faux-depth: contenuti bloccati/sfocati
+   Suggerisce profondità di catalogo prima ancora di popolare.
+   ───────────────────────────────────────────── */
+.locked {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.locked > .locked-inner {
+  filter: blur(7px) saturate(0.7);
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}
+.locked > .locked-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px;
+  background:
+    radial-gradient(120% 100% at 50% 0%, rgba(7, 11, 22, 0.35), rgba(7, 11, 22, 0.78) 70%);
+}
+
+/* Variante banner: rettangolare wide, fade-out dalla metà — bassa, una riga ghost */
+.locked-banner {
+  min-height: 170px;
+}
+.locked-banner > .locked-inner {
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 95%);
+  mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 95%);
+  opacity: 0.55;
+}
+.locked-banner > .locked-veil {
+  background:
+    linear-gradient(180deg, rgba(7, 11, 22, 0.0) 0%, rgba(7, 11, 22, 0.55) 55%, rgba(7, 11, 22, 0.92) 100%);
+  padding: 18px 24px;
+}
+
+/* Sfumatura inferiore: il blocco sembra "continuare" oltre il fold */
+.fade-more {
+  -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+}
