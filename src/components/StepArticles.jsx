@@ -1,7 +1,6 @@
 import { articles } from "../data/content";
 import ImageSlot from "./ImageSlot";
 import RevealOnScroll from "./RevealOnScroll";
-import MoreToComeBanner from "./MoreToComeBanner";
 
 function ArrowIcon() {
   return (
@@ -132,13 +131,6 @@ export default function StepArticles() {
             </RevealOnScroll>
           ))}
         </div>
-
-        <MoreToComeBanner
-          title="e molti altri"
-          subtitle="altri articoli sul nostro lavoro"
-          aspectRatio="16/10"
-          showPlus
-        />
 
         <p className="mt-10 font-mono text-[11px] tracking-[0.15em] uppercase text-muted-2">
           Tutti gli articoli si aprono in una nuova scheda sul sito della testata originale.

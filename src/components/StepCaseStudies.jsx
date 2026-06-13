@@ -2,7 +2,6 @@ import { caseStudies } from "../data/content";
 import ImageSlot from "./ImageSlot";
 import CaseStudyPreview from "./CaseStudyPreview";
 import RevealOnScroll from "./RevealOnScroll";
-import MoreToComeBanner from "./MoreToComeBanner";
 
 export default function StepCaseStudies() {
   return (
@@ -84,13 +83,6 @@ export default function StepCaseStudies() {
             </RevealOnScroll>
           ))}
         </div>
-
-        <MoreToComeBanner
-          title="e molti altri"
-          subtitle="altri progetti documentati"
-          aspectRatio="16/10"
-          showPlus
-        />
       </div>
     </section>
   );

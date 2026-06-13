@@ -3,7 +3,6 @@ import { videos } from "../data/content";
 import MediaSlot from "./MediaSlot";
 import RevealOnScroll from "./RevealOnScroll";
 import VideoModal from "./VideoModal";
-import MoreToComeBanner from "./MoreToComeBanner";
 
 export default function StepVideos() {
   const [active, setActive] = useState(null);
@@ -57,52 +56,14 @@ export default function StepVideos() {
                   />
                 </div>
                 <div className="px-5 pb-5 pt-3">
-                  {v.title ? (
-                    <>
-                      <div className="font-display text-[16px] font-semibold text-text lowercase">
-                        {v.title}
-                      </div>
-                      {v.company && (
-                        <div className="mt-2 font-display text-[14px] font-semibold text-text">
-                          {v.company}
-                        </div>
-                      )}
-                      {v.description && (
-                        <div className="text-[13px] text-muted mt-1 leading-snug">
-                          {v.description}
-                        </div>
-                      )}
-                      {v.duration && (
-                        <div className="mt-3 font-mono text-[11px] tracking-[0.16em] text-teal">
-                          {v.duration}
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <>
-                      <div className="font-display text-[16px] font-semibold text-text">
-                        {v.name}
-                      </div>
-                      <div className="text-[13px] text-muted mt-1 leading-snug">
-                        {v.role} · {v.company}
-                      </div>
-                      <div className="mt-3 font-mono text-[11px] tracking-[0.16em] text-teal">
-                        {v.duration}
-                      </div>
-                    </>
-                  )}
+                  <div className="font-display text-[16px] font-semibold text-text lowercase">
+                    {v.title}
+                  </div>
                 </div>
               </RevealOnScroll>
             );
           })}
         </div>
-
-        <MoreToComeBanner
-          title="il prossimo sei tu"
-          subtitle="slot disponibile · testimonianza futura"
-          aspectRatio="16/10"
-          showPlus
-        />
       </div>
 
       {active && (
