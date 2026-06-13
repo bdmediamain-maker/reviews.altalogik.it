@@ -75,6 +75,13 @@ export const videos = [
     posterUrl: "/posters/testimonianza-3.webp",
     company: "testimonianza 3",
   },
+  {
+    id: 4,
+    title: "testimonianza n.4",
+    duration: "01:36",
+    videoUrl: "/videos/testimonianza-4.mp4",
+    posterUrl: "/posters/testimonianza-4.webp",
+  },
 ];
 
 // ── STEP 02 · CASE STUDIES (PDF) ───────────────────────────────────────────
