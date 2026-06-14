@@ -51,27 +51,39 @@ export const hero = {
 export const videos = [
   {
     id: 1,
-    title: "testimonianza n.1",
+    title: "Testimonianza",
+    duration: "0:52",
+    description:
+      "Con loro si va dritti al punto: hanno capito subito le nostre esigenze e le hanno trasformate in soluzioni reali.",
     videoUrl: "/videos/testimonianza-1.mp4",
     posterUrl: "/posters/testimonianza-1.webp",
   },
   {
     id: 2,
-    title: "testimonianza n.2",
+    title: "Testimonianza",
+    duration: "1:46",
+    description:
+      "Hanno una visione della tecnologia e dello sviluppo che pochissime altre realtà sul mercato possono vantare.",
     videoUrl: "/videos/testimonianza-2.mp4",
     posterUrl: "/posters/testimonianza-2.webp",
   },
   {
     id: 3,
-    title: "testimonianza n.3",
-    videoUrl: "/videos/testimonianza-3.mp4",
-    posterUrl: "/posters/testimonianza-3.webp",
+    title: "Testimonianza",
+    duration: "1:36",
+    description:
+      "Aiutate tantissimo a facilitare le cose: con voi si impara facendo, in modo super intuitivo.",
+    videoUrl: "/videos/testimonianza-4.mp4",
+    posterUrl: "/posters/testimonianza-4.webp",
   },
   {
     id: 4,
-    title: "testimonianza n.4",
-    videoUrl: "/videos/testimonianza-4.mp4",
-    posterUrl: "/posters/testimonianza-4.webp",
+    title: "Testimonianza",
+    duration: "0:21",
+    description:
+      "Siete forti e onesti nella proposta: un livello di trasparenza e concretezza davvero raro.",
+    videoUrl: "/videos/testimonianza-3.mp4",
+    posterUrl: "/posters/testimonianza-3.webp",
   },
 ];
 
