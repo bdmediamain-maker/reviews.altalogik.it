@@ -85,6 +85,15 @@ export const videos = [
     videoUrl: "/videos/testimonianza-3.mp4",
     posterUrl: "/posters/testimonianza-3.webp",
   },
+  {
+    id: 5,
+    title: "Testimonianza",
+    duration: "0:52",
+    description:
+      "Mi sono convinto grazie alla vostra preparazione, stavo affrontando un argomento di cui non conoscevo nulla e grazie a voi siamo riusciti a superare questo ostacolo.",
+    videoUrl: "/videos/testimonianza-5.mp4",
+    posterUrl: "/posters/testimonianza-5.webp",
+  },
 ];
 
 // ── STEP 02 · CASE STUDIES (PDF) ───────────────────────────────────────────
