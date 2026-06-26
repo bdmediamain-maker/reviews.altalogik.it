@@ -79,11 +79,11 @@ export const videos = [
   {
     id: 4,
     title: "Testimonianza",
-    duration: "0:21",
+    duration: "1:09",
     description:
-      "Siete forti e onesti nella proposta: un livello di trasparenza e concretezza davvero raro.",
-    videoUrl: "/videos/testimonianza-3.mp4",
-    posterUrl: "/posters/testimonianza-3.webp",
+      "Avete centrato l'esigenza dell'agente immobiliare, ne sono rimasto molto sorpreso e felice del risultato.",
+    videoUrl: "/videos/testimonianza-6.mp4",
+    posterUrl: "/posters/testimonianza-6.webp",
   },
   {
     id: 5,
@@ -93,6 +93,15 @@ export const videos = [
       "Mi sono convinto grazie alla vostra preparazione, stavo affrontando un argomento di cui non conoscevo nulla e grazie a voi siamo riusciti a superare questo ostacolo.",
     videoUrl: "/videos/testimonianza-5.mp4",
     posterUrl: "/posters/testimonianza-5.webp",
+  },
+  {
+    id: 6,
+    title: "Testimonianza",
+    duration: "0:21",
+    description:
+      "Siete forti e onesti nella proposta: un livello di trasparenza e concretezza davvero raro.",
+    videoUrl: "/videos/testimonianza-3.mp4",
+    posterUrl: "/posters/testimonianza-3.webp",
   },
 ];
 

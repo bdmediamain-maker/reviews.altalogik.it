@@ -78,7 +78,7 @@ export default function StepVideos() {
 
           <RevealOnScroll
             delay={120}
-            className="card-brick overflow-hidden flex items-center justify-center min-h-[260px] border border-dashed border-line-strong"
+            className="card-brick overflow-hidden flex items-center justify-center min-h-[260px] sm:col-span-2 lg:col-span-3 border border-dashed border-line-strong"
           >
             <div className="flex flex-col items-center justify-center gap-5 px-6 py-10 text-center">
               <span className="font-display text-text font-semibold text-[clamp(22px,2.4vw,30px)] leading-[1.2] max-w-[520px]">
