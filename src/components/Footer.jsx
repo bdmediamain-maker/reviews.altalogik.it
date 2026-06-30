@@ -1,6 +1,6 @@
 import { brand, footer } from "../data/content";
 
-export default function Footer() {
+export default function Footer({ onOpenLegal }) {
   return (
     <footer className="relative border-t border-line bg-bg-2 py-12 sm:py-16">
       <div className="max-w-page mx-auto px-4 sm:px-6">
@@ -39,6 +39,7 @@ export default function Footer() {
           <ul className="flex flex-wrap gap-5 font-mono text-[11px] tracking-[0.12em] uppercase text-muted-2">
             {footer.links.map((l, i) => {
               const external = l.href.startsWith("http");
+              const isLegal = l.href === "#legal";
               return (
                 <li key={i}>
                   <a
@@ -46,6 +47,12 @@ export default function Footer() {
                     {...(external && {
                       target: "_blank",
                       rel: "noopener noreferrer",
+                    })}
+                    {...(isLegal && {
+                      onClick: (e) => {
+                        e.preventDefault();
+                        onOpenLegal?.();
+                      },
                     })}
                     className="hover:text-teal transition-colors"
                   >

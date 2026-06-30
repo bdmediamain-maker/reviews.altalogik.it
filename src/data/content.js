@@ -291,7 +291,7 @@ export const footer = {
       label: "Cookie",
       href: "https://www.iubenda.com/privacy-policy/78964261/cookie-policy",
     },
-    { label: "Note legali", href: "#" },
+    { label: "Note legali", href: "#legal" },
   ],
   navLinks: [
     { label: "Video", href: "#video" },
@@ -300,5 +300,41 @@ export const footer = {
     { label: "Partner", href: "#clienti" },
   ],
   legal:
-    "Altalogik è un prodotto di Altalogik SRL · Sedi operative: Bologna · Milano, IT",
+    "Altalogik è un prodotto di BD TR S.R.L. · Sede legale: Via Santa Tecla 4, 20122 Milano (MI) · P.IVA/C.F. 14777710964 · Registro Imprese di Milano · PEC: BDTRSRL@PEC.IT",
+};
+
+// ── NOTE LEGALI ─────────────────────────────────────────────────────────────
+export const legalNotice = {
+  title: "Note legali",
+  lastUpdate: "30 giugno 2026",
+  sections: [
+    {
+      heading: "Titolare del sito",
+      body: "Il sito altalogik.reviews è di proprietà di BD TR S.R.L., con sede legale in Via Santa Tecla 4, 20122 Milano (MI), P.IVA e Codice Fiscale 14777710964, iscritta al Registro Imprese di Milano. Codice ATECO 621000 — Attività di programmazione informatica. Rappresentante legale: Diana Bedr Espedito Mario. PEC: BDTRSRL@PEC.IT. Data inizio attività: 11/06/2026.\n\nIl sito ha finalità informative e illustra prodotti, servizi e casi reali del brand Altalogik.",
+    },
+    {
+      heading: "Proprietà intellettuale",
+      body: "Tutti i contenuti pubblicati su altalogik.reviews — testi, immagini, video, grafiche, loghi, layout, codice e marchi — sono di proprietà di BD TR S.R.L., dei rispettivi autori o dei loro legittimi titolari, e sono tutelati dalla normativa italiana e internazionale in materia di diritto d'autore e proprietà industriale. È vietata la riproduzione, distribuzione, modifica o riutilizzo, integrale o parziale, senza autorizzazione scritta del titolare.\n\nI loghi di clienti, partner e testate giornalistiche eventualmente riprodotti sul sito sono dei rispettivi proprietari e vengono mostrati a soli fini illustrativi, con il loro permesso.",
+    },
+    {
+      heading: "Limitazione di responsabilità",
+      body: "Le testimonianze, i case study e i risultati riportati su questo sito si riferiscono a clienti reali di Altalogik e descrivono situazioni effettivamente verificatesi. Tali risultati non costituiscono in alcun modo una promessa o una garanzia di esito: ogni progetto è unico e il risultato di una collaborazione dipende dal contesto specifico, dai processi del cliente e dalle scelte tecniche condivise.\n\nBD TR S.R.L. non garantisce la disponibilità continua del sito né l'assenza di errori, interruzioni, ritardi o malfunzionamenti, e si riserva di sospenderne l'accesso senza preavviso per esigenze tecniche o di manutenzione.",
+    },
+    {
+      heading: "Link a siti terzi",
+      body: "Il sito può contenere link a siti web di terze parti (es. rassegna stampa, partner tecnologici). Tali link sono forniti per comodità dell'utente e non implicano alcuna approvazione o controllo da parte di BD TR S.R.L. sui contenuti delle pagine di destinazione. Cliccando su un link esterno l'utente lascia altalogik.reviews ed è soggetto ai termini d'uso e alle policy del sito di destinazione.",
+    },
+    {
+      heading: "Legge applicabile e foro competente",
+      body: "Le presenti Note Legali sono regolate dalla legge italiana. Per qualunque controversia relativa al sito o ai suoi contenuti sarà competente in via esclusiva il Foro di Milano, salvo che la legge inderogabilmente disponga diversamente nel caso di utente qualificabile come consumatore.",
+    },
+    {
+      heading: "Modifiche",
+      body: "BD TR S.R.L. si riserva il diritto di modificare in qualsiasi momento e senza preavviso le presenti Note Legali. Le modifiche saranno efficaci dal momento della pubblicazione su questa pagina; è onere dell'utente verificarne periodicamente lo stato.",
+    },
+    {
+      heading: "Contatti",
+      body: "Per qualsiasi questione di natura legale o relativa al contenuto del sito è possibile scrivere a PEC: BDTRSRL@PEC.IT.",
+    },
+  ],
 };
