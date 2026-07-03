@@ -21,8 +21,48 @@ function ArrowIcon() {
   );
 }
 
+function ArticleCard({ a, delay }) {
+  return (
+    <RevealOnScroll delay={delay} className="h-full">
+      <a
+        href={a.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="card-brick overflow-hidden flex flex-col h-full group"
+      >
+        <div className="p-3">
+          <ImageSlot
+            imageUrl={a.imageUrl}
+            label={a.outlet.toUpperCase()}
+            aspect="16/10"
+            objectFit={a.imageFit || "cover"}
+            placeholderText={a.outlet}
+            placeholderTopic={a.topic}
+          />
+        </div>
+        <div className="px-5 pb-5 pt-3 flex flex-col flex-1">
+          <div className="font-mono text-[11px] tracking-[0.18em] uppercase">
+            <span className="text-teal">{a.outlet}</span>
+            <span className="text-muted-2 mx-2">·</span>
+            <span className="text-muted">{a.date}</span>
+          </div>
+          <h3 className="font-display text-text font-semibold mt-2 text-[17px] leading-[1.25]">
+            {a.title}
+          </h3>
+          <p className="text-[14px] text-muted mt-2 leading-[1.5] line-clamp-3">
+            {a.excerpt}
+          </p>
+          <span className="mt-4 font-mono text-[12px] text-teal inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            Leggi <ArrowIcon />
+          </span>
+        </div>
+      </a>
+    </RevealOnScroll>
+  );
+}
+
 export default function StepArticles() {
-  const [featured, ...rest] = articles;
+  const [featured, sideCard, ...rest] = articles;
 
   return (
     <section id="news" className="relative pt-16 sm:pt-24 pb-16 sm:pb-24">
@@ -47,88 +87,58 @@ export default function StepArticles() {
           </p>
         </RevealOnScroll>
 
-        {/* Featured (primo articolo, hero card) */}
-        {featured && (
-          <RevealOnScroll delay={80} className="mt-12">
-            <a
-              href={featured.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="card-brick block overflow-hidden group"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr]">
-                <div className="p-3">
-                  <ImageSlot
-                    imageUrl={featured.imageUrl}
-                    label={`${featured.outlet.toUpperCase()} · ANTEPRIMA`}
-                    aspect="16/10"
-                    objectFit={featured.imageFit || "cover"}
-                    placeholderText={featured.outlet}
-                    placeholderTopic={featured.topic}
-                  />
-                </div>
-                <div className="px-6 sm:px-8 pb-7 pt-5 lg:py-9 flex flex-col justify-center">
-                  <div className="flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] uppercase">
-                    <span className="text-teal">{featured.outlet}</span>
-                    <span className="text-muted-2">·</span>
-                    <span className="text-muted">{featured.date}</span>
-                    <span className="ml-auto inline-flex items-center justify-center w-7 h-7 rounded-full border border-line-strong text-muted group-hover:text-teal group-hover:border-teal transition-colors">
-                      <ArrowIcon />
-                    </span>
-                  </div>
-                  <h3 className="font-display text-text font-semibold mt-4 text-[22px] sm:text-[26px] leading-[1.2]">
-                    {featured.title}
-                  </h3>
-                  <p className="text-[15px] text-muted mt-3 leading-[1.55]">
-                    {featured.excerpt}
-                  </p>
-                  <span className="mt-5 font-mono text-[12px] text-teal inline-flex items-center gap-1.5">
-                    Leggi l'articolo <span aria-hidden="true">→</span>
-                  </span>
-                </div>
-              </div>
-            </a>
-          </RevealOnScroll>
-        )}
-
-        {/* Resto degli articoli — griglia card */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-7">
-          {rest.map((a, i) => (
-            <RevealOnScroll key={a.id} delay={(i % 3) * 60}>
+        {/* Riga in evidenza: featured (2 colonne) + articolo affiancato (1 colonna) */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
+          {featured && (
+            <RevealOnScroll delay={80} className="lg:col-span-2 h-full">
               <a
-                href={a.url}
+                href={featured.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="card-brick overflow-hidden flex flex-col h-full group"
+                className="card-brick block overflow-hidden group h-full"
               >
-                <div className="p-3">
-                  <ImageSlot
-                    imageUrl={a.imageUrl}
-                    label={a.outlet.toUpperCase()}
-                    aspect="16/10"
-                    objectFit={a.imageFit || "cover"}
-                    placeholderText={a.outlet}
-                    placeholderTopic={a.topic}
-                  />
-                </div>
-                <div className="px-5 pb-5 pt-3 flex flex-col flex-1">
-                  <div className="font-mono text-[11px] tracking-[0.18em] uppercase">
-                    <span className="text-teal">{a.outlet}</span>
-                    <span className="text-muted-2 mx-2">·</span>
-                    <span className="text-muted">{a.date}</span>
+                <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] h-full">
+                  <div className="p-3">
+                    <ImageSlot
+                      imageUrl={featured.imageUrl}
+                      label={`${featured.outlet.toUpperCase()} · ANTEPRIMA`}
+                      aspect="16/10"
+                      objectFit={featured.imageFit || "cover"}
+                      placeholderText={featured.outlet}
+                      placeholderTopic={featured.topic}
+                    />
                   </div>
-                  <h3 className="font-display text-text font-semibold mt-2 text-[17px] leading-[1.25]">
-                    {a.title}
-                  </h3>
-                  <p className="text-[14px] text-muted mt-2 leading-[1.5] line-clamp-3">
-                    {a.excerpt}
-                  </p>
-                  <span className="mt-4 font-mono text-[12px] text-teal inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Leggi <ArrowIcon />
-                  </span>
+                  <div className="px-6 sm:px-8 pb-7 pt-5 lg:py-9 flex flex-col justify-center">
+                    <div className="flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] uppercase">
+                      <span className="text-teal">{featured.outlet}</span>
+                      <span className="text-muted-2">·</span>
+                      <span className="text-muted">{featured.date}</span>
+                      <span className="ml-auto inline-flex items-center justify-center w-7 h-7 rounded-full border border-line-strong text-muted group-hover:text-teal group-hover:border-teal transition-colors">
+                        <ArrowIcon />
+                      </span>
+                    </div>
+                    <h3 className="font-display text-text font-semibold mt-4 text-[22px] sm:text-[26px] leading-[1.2]">
+                      {featured.title}
+                    </h3>
+                    <p className="text-[15px] text-muted mt-3 leading-[1.55]">
+                      {featured.excerpt}
+                    </p>
+                    <span className="mt-5 font-mono text-[12px] text-teal inline-flex items-center gap-1.5">
+                      Leggi l'articolo <span aria-hidden="true">→</span>
+                    </span>
+                  </div>
                 </div>
               </a>
             </RevealOnScroll>
+          )}
+
+          {sideCard && <ArticleCard a={sideCard} delay={140} />}
+        </div>
+
+        {/* Resto degli articoli — griglia card */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+          {rest.map((a, i) => (
+            <ArticleCard key={a.id} a={a} delay={(i % 3) * 60} />
           ))}
         </div>
 

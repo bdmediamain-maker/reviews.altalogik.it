@@ -88,6 +88,15 @@ export const videos = [
   {
     id: 5,
     title: "Testimonianza",
+    duration: "1:21",
+    description:
+      "Sono dei bravi ragazzi, hanno delle buone referenze, più veloci ed economici rispetto alla concorrenza. Ho trovato un team veloce, aperto a collaborare, con la possibilità di crescere insieme: ottimo avere dei ragazzi giovani.",
+    videoUrl: "/videos/testimonianza-7.mp4",
+    posterUrl: "/posters/testimonianza-7.webp",
+  },
+  {
+    id: 6,
+    title: "Testimonianza",
     duration: "0:52",
     description:
       "Mi sono convinto grazie alla vostra preparazione, stavo affrontando un argomento di cui non conoscevo nulla e grazie a voi siamo riusciti a superare questo ostacolo.",
@@ -95,7 +104,7 @@ export const videos = [
     posterUrl: "/posters/testimonianza-5.webp",
   },
   {
-    id: 6,
+    id: 7,
     title: "Testimonianza",
     duration: "0:21",
     description:
@@ -186,6 +195,18 @@ export const articles = [
     imageUrl:
       "https://www.easynewsweb.com/wp-content/uploads/2026/05/Logo_AltaLogik-1-768x419.png",
     imageFit: "contain",
+  },
+  {
+    id: 8,
+    outlet: "The Financial Spectator",
+    topic: "AI & Capitale umano",
+    date: "LUG 2026",
+    title: "La vera leva dell'intelligenza artificiale è il capitale umano",
+    excerpt:
+      "L'AI diventa una leva operativa quando libera il tempo umano dai compiti ripetitivi e lo rialloca su attività a maggior valore, aumentando il rendimento organizzativo delle imprese.",
+    url: "https://www.thefinancialspectator.com/2026/07/03/intelligenza-artificiale-capitale-umano-leva-pmi/",
+    imageUrl: "/articles/financial-spectator.webp",
+    imageFit: "cover",
   },
   {
     id: 2,
