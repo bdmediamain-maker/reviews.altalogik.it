@@ -4,7 +4,6 @@ import Hero from "./components/Hero";
 import StepVideos from "./components/StepVideos";
 import StepCaseStudies from "./components/StepCaseStudies";
 import StepArticles from "./components/StepArticles";
-import StepClients from "./components/StepClients";
 import Footer from "./components/Footer";
 import FabCTA from "./components/FabCTA";
 import LegalModal from "./components/LegalModal";
@@ -40,7 +39,6 @@ export default function App() {
         <StepVideos />
         <StepCaseStudies />
         <StepArticles />
-        <StepClients />
       </main>
       <Footer onOpenLegal={openLegal} />
       <FabCTA />

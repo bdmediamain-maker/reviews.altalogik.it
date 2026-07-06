@@ -12,7 +12,7 @@ export default function StepCaseStudies() {
       <div className="max-w-page mx-auto px-4 sm:px-6">
         <RevealOnScroll>
           <p className="font-mono text-[12px] tracking-[0.22em] uppercase text-teal mb-3">
-            Step 02 / 04
+            Step 02 / 03
           </p>
           <h2
             className="font-display font-semibold text-text max-w-[720px]"

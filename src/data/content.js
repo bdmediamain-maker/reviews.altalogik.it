@@ -29,7 +29,6 @@ export const nav = {
     { label: "01 · Video", href: "#video" },
     { label: "02 · Case study", href: "#case-study" },
     { label: "03 · News", href: "#news" },
-    { label: "04 · Partner", href: "#clienti" },
   ],
 };
 
@@ -43,7 +42,6 @@ export const hero = {
     { label: "01 · Video", href: "#video" },
     { label: "02 · Casi studio", href: "#case-study" },
     { label: "03 · News", href: "#news" },
-    { label: "04 · Partner", href: "#clienti" },
   ],
 };
 
@@ -287,19 +285,6 @@ export const articles = [
   },
 ];
 
-// ── STEP 04 · PARTNER TECNOLOGICI ──────────────────────────────────────────
-// Stessi partner mostrati su https://altalogik.it/partner — cloud & infra.
-export const partners = [
-  { id: 1, name: "AWS", imageUrl: "/partners/aws.webp" },
-  { id: 2, name: "Google Cloud", imageUrl: "/partners/google-cloud.webp" },
-  { id: 3, name: "Microsoft Azure", imageUrl: "/partners/microsoft-azure.webp" },
-  { id: 4, name: "Vercel", imageUrl: "/partners/vercel.webp" },
-  { id: 5, name: "Stripe", imageUrl: "/partners/stripe.webp" },
-  { id: 6, name: "Twilio", imageUrl: "/partners/twilio.webp" },
-  { id: 7, name: "Datadog", imageUrl: "/partners/datadog.webp" },
-  { id: 8, name: "Supabase", imageUrl: "/partners/supabase.webp" },
-];
-
 // ── FOOTER ──────────────────────────────────────────────────────────────────
 export const footer = {
   copyright: `© ${new Date().getFullYear()} Altalogik · Software AI per PMI italiane`,
@@ -318,7 +303,6 @@ export const footer = {
     { label: "Video", href: "#video" },
     { label: "Case study", href: "#case-study" },
     { label: "News", href: "#news" },
-    { label: "Partner", href: "#clienti" },
   ],
   legal:
     "Altalogik è un prodotto di BD TR S.R.L. · Sede legale: Via Santa Tecla 4, 20122 Milano (MI) · P.IVA/C.F. 14777710964 · Registro Imprese di Milano · PEC: BDTRSRL@PEC.IT",
