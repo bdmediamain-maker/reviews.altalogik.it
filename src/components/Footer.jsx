@@ -1,6 +1,6 @@
 import { brand, footer } from "../data/content";
 
-export default function Footer({ onOpenLegal }) {
+export default function Footer() {
   return (
     <footer className="relative border-t border-line bg-bg-2 py-12 sm:py-16">
       <div className="max-w-page mx-auto px-4 sm:px-6">
@@ -37,37 +37,20 @@ export default function Footer({ onOpenLegal }) {
             {footer.copyright}
           </p>
           <ul className="flex flex-wrap gap-5 font-mono text-[11px] tracking-[0.12em] uppercase text-muted-2">
-            {footer.links.map((l, i) => {
-              const external = l.href.startsWith("http");
-              const isLegal = l.href === "#legal";
-              return (
-                <li key={i}>
-                  <a
-                    href={l.href}
-                    {...(external && {
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                    })}
-                    {...(isLegal && {
-                      onClick: (e) => {
-                        e.preventDefault();
-                        onOpenLegal?.();
-                      },
-                    })}
-                    className="hover:text-teal transition-colors"
-                  >
-                    {l.label}
-                  </a>
-                </li>
-              );
-            })}
+            {footer.links.map((l, i) => (
+              <li key={i}>
+                <a
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-teal transition-colors"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
-
-        {/* Riga 3: ragione sociale */}
-        <p className="mt-6 font-mono text-[11px] text-muted-2 leading-relaxed">
-          {footer.legal}
-        </p>
       </div>
     </footer>
   );
