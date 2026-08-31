@@ -51,6 +51,12 @@ export default function Footer() {
             ))}
           </ul>
         </div>
+
+        {/* Riga 3: dati legali societari */}
+        <div className="mt-8 space-y-1 font-mono text-[11px] tracking-[0.06em] text-muted-2">
+          <p>{footer.legal.company}</p>
+          <p>{footer.legal.brand}</p>
+        </div>
       </div>
     </footer>
   );

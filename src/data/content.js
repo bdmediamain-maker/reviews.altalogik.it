@@ -288,6 +288,10 @@ export const articles = [
 // ── FOOTER ──────────────────────────────────────────────────────────────────
 export const footer = {
   copyright: `© ${new Date().getFullYear()} Altalogik · Software AI per PMI italiane`,
+  legal: {
+    company: "BD TR S.R.L. — Via Santa Tecla 4, 20122 Milano (MI) — P.IVA 14777710964",
+    brand: "Altalogik è un marchio di BD TR S.R.L.",
+  },
   links: [
     {
       label: "Privacy",
