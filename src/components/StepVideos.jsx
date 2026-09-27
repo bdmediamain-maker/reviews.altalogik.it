@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { videos, ctaLink } from "../data/content";
+import { videos, writtenReview, ctaLink } from "../data/content";
 import MediaSlot from "./MediaSlot";
 import RevealOnScroll from "./RevealOnScroll";
 import VideoModal from "./VideoModal";
@@ -31,6 +31,30 @@ export default function StepVideos() {
         </RevealOnScroll>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 mt-12">
+          {/* Messaggio scritto: apre la sezione e ne detta l'ordine */}
+          <RevealOnScroll className="card-brick overflow-hidden flex flex-col sm:col-span-2 p-6 sm:p-8">
+            <span className="self-start font-mono text-[10px] tracking-[0.18em] uppercase text-muted bg-black/45 px-2 py-1 rounded-md">
+              {writtenReview.label}
+            </span>
+            <div className="font-display text-[20px] sm:text-[22px] font-semibold text-text mt-5">
+              {writtenReview.title}
+            </div>
+            <p className="text-[15px] sm:text-[16px] leading-[1.6] text-muted mt-3">
+              &ldquo;{writtenReview.quote}&rdquo;
+            </p>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 mt-6 pt-6 border-t border-line">
+              {writtenReview.points.map((p) => (
+                <li
+                  key={p}
+                  className="flex items-start gap-3 text-[14px] leading-[1.45] text-text"
+                >
+                  <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </RevealOnScroll>
+
           {videos.map((v, i) => {
             const isLocal = Boolean(v.videoUrl && v.posterUrl);
             return (
@@ -43,7 +67,7 @@ export default function StepVideos() {
                   <MediaSlot
                     videoUrl={v.videoUrl}
                     posterUrl={v.posterUrl}
-                    label={`VIDEO ${String(v.id).padStart(2, "0")}`}
+                    label={`VIDEO ${String(i + 1).padStart(2, "0")}`}
                     onPlay={
                       isLocal
                         ? () =>

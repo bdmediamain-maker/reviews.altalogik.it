@@ -45,8 +45,25 @@ export const hero = {
   ],
 };
 
-// ── STEP 01 · VIDEO TESTIMONIANZE ──────────────────────────────────────────
+// ── STEP 01 · TESTIMONIANZE ────────────────────────────────────────────────
+// Filo logico della sezione: il messaggio scritto apre e riassume i quattro
+// motivi per cui ci scelgono; i video seguono lo stesso ordine
+// (esigenze capite → approccio concreto → disponibilità → competenza).
+export const writtenReview = {
+  label: "Messaggio del cliente",
+  title: "Perché ci hanno scelto",
+  quote:
+    "Vi abbiamo scelto principalmente perché fin dai primi confronti ci avete dato l'impressione di aver compreso bene le nostre esigenze e gli obiettivi del progetto, proponendoci un approccio concreto e adatto alla nostra realtà. Un altro aspetto che abbiamo apprezzato è stata la disponibilità e la flessibilità nel confrontarvi con noi, anche sugli aspetti più operativi e tecnici.",
+  points: [
+    "Avete capito subito le nostre esigenze",
+    "Ci è piaciuto il vostro approccio concreto e pragmatico",
+    "Disponibilità e flessibilità nel confronto",
+    "Buona competenza, anche sugli aspetti tecnici",
+  ],
+};
+
 export const videos = [
+  // Esigenze capite
   {
     id: 1,
     title: "Testimonianza",
@@ -56,33 +73,17 @@ export const videos = [
     videoUrl: "/videos/testimonianza-1.mp4",
     posterUrl: "/posters/testimonianza-1.webp",
   },
+  // Approccio concreto
   {
-    id: 2,
+    id: 7,
     title: "Testimonianza",
-    duration: "1:46",
+    duration: "0:21",
     description:
-      "Hanno una visione della tecnologia e dello sviluppo che pochissime altre realtà sul mercato possono vantare.",
-    videoUrl: "/videos/testimonianza-2.mp4",
-    posterUrl: "/posters/testimonianza-2.webp",
+      "Siete forti e onesti nella proposta: un livello di trasparenza e concretezza davvero raro.",
+    videoUrl: "/videos/testimonianza-3.mp4",
+    posterUrl: "/posters/testimonianza-3.webp",
   },
-  {
-    id: 3,
-    title: "Testimonianza",
-    duration: "1:36",
-    description:
-      "Aiutate tantissimo a facilitare le cose: con voi si impara facendo, in modo super intuitivo.",
-    videoUrl: "/videos/testimonianza-4.mp4",
-    posterUrl: "/posters/testimonianza-4.webp",
-  },
-  {
-    id: 4,
-    title: "Testimonianza",
-    duration: "1:09",
-    description:
-      "Avete centrato l'esigenza dell'agente immobiliare, ne sono rimasto molto sorpreso e felice del risultato.",
-    videoUrl: "/videos/testimonianza-6.mp4",
-    posterUrl: "/posters/testimonianza-6.webp",
-  },
+  // Disponibilità e flessibilità
   {
     id: 5,
     title: "Testimonianza",
@@ -92,6 +93,7 @@ export const videos = [
     videoUrl: "/videos/testimonianza-7.mp4",
     posterUrl: "/posters/testimonianza-7.webp",
   },
+  // Competenza
   {
     id: 6,
     title: "Testimonianza",
@@ -102,13 +104,13 @@ export const videos = [
     posterUrl: "/posters/testimonianza-5.webp",
   },
   {
-    id: 7,
+    id: 2,
     title: "Testimonianza",
-    duration: "0:21",
+    duration: "1:46",
     description:
-      "Siete forti e onesti nella proposta: un livello di trasparenza e concretezza davvero raro.",
-    videoUrl: "/videos/testimonianza-3.mp4",
-    posterUrl: "/posters/testimonianza-3.webp",
+      "Hanno una visione della tecnologia e dello sviluppo che pochissime altre realtà sul mercato possono vantare.",
+    videoUrl: "/videos/testimonianza-2.mp4",
+    posterUrl: "/posters/testimonianza-2.webp",
   },
 ];
 
