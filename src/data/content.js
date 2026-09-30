@@ -46,9 +46,9 @@ export const hero = {
 };
 
 // ── STEP 01 · TESTIMONIANZE ────────────────────────────────────────────────
-// Filo logico della sezione: il messaggio scritto apre e riassume i quattro
-// motivi per cui ci scelgono; i video seguono lo stesso ordine
-// (esigenze capite → approccio concreto → disponibilità → competenza).
+// Ordine della sezione per formato: prima i video in cui si vedono i clienti,
+// poi i video audio con grafica "Testimonianza", per ultimo il messaggio
+// scritto con lo screenshot originale come prova.
 export const writtenReview = {
   label: "Messaggio del cliente",
   title: "Perché ci hanno scelto",
@@ -66,7 +66,16 @@ export const writtenReview = {
 };
 
 export const videos = [
-  // Esigenze capite
+  // Video con i volti dei clienti
+  {
+    id: 8,
+    title: "Testimonianza",
+    duration: "1:15",
+    description:
+      "Mi sono fidato di Altalogik: insieme abbiamo costruito un software che hanno interpretato molto bene. A fare la differenza sono state la rapidità di esecuzione, la capacità di capire subito le nostre esigenze e di applicare l'Intelligenza Artificiale. Lo consiglierei: i miei soldi li ho spesi molto bene.",
+    videoUrl: "/videos/testimonianza-8.mp4",
+    posterUrl: "/posters/testimonianza-8.webp",
+  },
   {
     id: 1,
     title: "Testimonianza",
@@ -76,17 +85,6 @@ export const videos = [
     videoUrl: "/videos/testimonianza-1.mp4",
     posterUrl: "/posters/testimonianza-1.webp",
   },
-  // Approccio concreto
-  {
-    id: 7,
-    title: "Testimonianza",
-    duration: "0:21",
-    description:
-      "Siete forti e onesti nella proposta: un livello di trasparenza e concretezza davvero raro.",
-    videoUrl: "/videos/testimonianza-3.mp4",
-    posterUrl: "/posters/testimonianza-3.webp",
-  },
-  // Disponibilità e flessibilità
   {
     id: 5,
     title: "Testimonianza",
@@ -96,16 +94,6 @@ export const videos = [
     videoUrl: "/videos/testimonianza-7.mp4",
     posterUrl: "/posters/testimonianza-7.webp",
   },
-  // Competenza
-  {
-    id: 6,
-    title: "Testimonianza",
-    duration: "0:52",
-    description:
-      "Mi sono convinto grazie alla vostra preparazione, stavo affrontando un argomento di cui non conoscevo nulla e grazie a voi siamo riusciti a superare questo ostacolo.",
-    videoUrl: "/videos/testimonianza-5.mp4",
-    posterUrl: "/posters/testimonianza-5.webp",
-  },
   {
     id: 2,
     title: "Testimonianza",
@@ -114,6 +102,25 @@ export const videos = [
       "Hanno una visione della tecnologia e dello sviluppo che pochissime altre realtà sul mercato possono vantare.",
     videoUrl: "/videos/testimonianza-2.mp4",
     posterUrl: "/posters/testimonianza-2.webp",
+  },
+  // Video audio con grafica "Testimonianza"
+  {
+    id: 7,
+    title: "Testimonianza",
+    duration: "0:21",
+    description:
+      "Siete forti e onesti nella proposta: un livello di trasparenza e concretezza davvero raro.",
+    videoUrl: "/videos/testimonianza-3.mp4",
+    posterUrl: "/posters/testimonianza-3.webp",
+  },
+  {
+    id: 6,
+    title: "Testimonianza",
+    duration: "0:52",
+    description:
+      "Mi sono convinto grazie alla vostra preparazione, stavo affrontando un argomento di cui non conoscevo nulla e grazie a voi siamo riusciti a superare questo ostacolo.",
+    videoUrl: "/videos/testimonianza-5.mp4",
+    posterUrl: "/posters/testimonianza-5.webp",
   },
 ];
 

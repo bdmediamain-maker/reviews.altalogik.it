@@ -33,7 +33,52 @@ export default function StepVideos() {
         </RevealOnScroll>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 mt-12">
-          {/* Messaggio scritto: apre la sezione e ne detta l'ordine */}
+          {videos.map((v, i) => {
+            const isLocal = Boolean(v.videoUrl && v.posterUrl);
+            return (
+              <RevealOnScroll
+                key={v.id}
+                delay={(i % 3) * 60}
+                className="card-brick overflow-hidden flex flex-col"
+              >
+                <div className="p-3">
+                  <MediaSlot
+                    videoUrl={v.videoUrl}
+                    posterUrl={v.posterUrl}
+                    label={`VIDEO ${String(i + 1).padStart(2, "0")}`}
+                    onPlay={
+                      isLocal
+                        ? () =>
+                            setActive({
+                              videoUrl: v.videoUrl,
+                              posterUrl: v.posterUrl,
+                            })
+                        : undefined
+                    }
+                  />
+                </div>
+                <div className="px-5 pb-5 pt-3">
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="font-display text-[16px] font-semibold text-text">
+                      {v.title}
+                    </div>
+                    {v.duration && (
+                      <span className="font-mono text-[11px] tracking-[0.18em] uppercase text-muted-2 whitespace-nowrap">
+                        {v.duration}
+                      </span>
+                    )}
+                  </div>
+                  {v.description && (
+                    <p className="text-[14px] leading-[1.5] text-muted mt-2">
+                      &ldquo;{v.description}&rdquo;
+                    </p>
+                  )}
+                </div>
+              </RevealOnScroll>
+            );
+          })}
+
+          {/* Messaggio scritto con screenshot originale: chiude le testimonianze */}
           <RevealOnScroll className="card-brick overflow-hidden sm:col-span-2 lg:col-span-3 p-6 sm:p-8">
             <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
               <div className="flex-1 min-w-0">
@@ -89,54 +134,9 @@ export default function StepVideos() {
             </div>
           </RevealOnScroll>
 
-          {videos.map((v, i) => {
-            const isLocal = Boolean(v.videoUrl && v.posterUrl);
-            return (
-              <RevealOnScroll
-                key={v.id}
-                delay={(i % 3) * 60}
-                className="card-brick overflow-hidden flex flex-col"
-              >
-                <div className="p-3">
-                  <MediaSlot
-                    videoUrl={v.videoUrl}
-                    posterUrl={v.posterUrl}
-                    label={`VIDEO ${String(i + 1).padStart(2, "0")}`}
-                    onPlay={
-                      isLocal
-                        ? () =>
-                            setActive({
-                              videoUrl: v.videoUrl,
-                              posterUrl: v.posterUrl,
-                            })
-                        : undefined
-                    }
-                  />
-                </div>
-                <div className="px-5 pb-5 pt-3">
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="font-display text-[16px] font-semibold text-text">
-                      {v.title}
-                    </div>
-                    {v.duration && (
-                      <span className="font-mono text-[11px] tracking-[0.18em] uppercase text-muted-2 whitespace-nowrap">
-                        {v.duration}
-                      </span>
-                    )}
-                  </div>
-                  {v.description && (
-                    <p className="text-[14px] leading-[1.5] text-muted mt-2">
-                      &ldquo;{v.description}&rdquo;
-                    </p>
-                  )}
-                </div>
-              </RevealOnScroll>
-            );
-          })}
-
           <RevealOnScroll
             delay={120}
-            className="card-brick overflow-hidden flex items-center justify-center min-h-[260px] border border-dashed border-line-strong"
+            className="card-brick overflow-hidden flex items-center justify-center min-h-[200px] sm:col-span-2 lg:col-span-3 border border-dashed border-line-strong"
           >
             <div className="flex flex-col items-center justify-center gap-5 px-6 py-10 text-center">
               <span className="font-display text-text font-semibold text-[clamp(22px,2.4vw,30px)] leading-[1.2] max-w-[520px]">
