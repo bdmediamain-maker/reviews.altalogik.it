@@ -3,7 +3,7 @@ import RevealOnScroll from "./RevealOnScroll";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative pt-20 sm:pt-32 pb-16 sm:pb-24">
+    <section id="top" className="relative pt-12 sm:pt-16">
       <div className="max-w-page mx-auto px-4 sm:px-6">
         <RevealOnScroll>
           <p className="font-mono text-[12px] tracking-[0.22em] uppercase text-teal">
@@ -49,7 +49,7 @@ export default function Hero() {
         </RevealOnScroll>
       </div>
 
-      <div className="max-w-page mx-auto px-4 sm:px-6 mt-16 sm:mt-24">
+      <div className="max-w-page mx-auto px-4 sm:px-6 mt-10 sm:mt-14">
         <div className="border-t border-line opacity-50" />
       </div>
     </section>

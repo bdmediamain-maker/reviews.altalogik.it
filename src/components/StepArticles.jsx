@@ -65,7 +65,7 @@ export default function StepArticles() {
   const [featured, sideCard, ...rest] = articles;
 
   return (
-    <section id="news" className="relative pt-16 sm:pt-24 pb-16 sm:pb-24">
+    <section id="news" className="relative pt-12 sm:pt-16 pb-12 sm:pb-16">
       <div className="max-w-page mx-auto px-4 sm:px-6">
         <RevealOnScroll>
           <p className="font-mono text-[12px] tracking-[0.22em] uppercase text-teal mb-3">

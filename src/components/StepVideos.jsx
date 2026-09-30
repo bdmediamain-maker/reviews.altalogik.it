@@ -10,7 +10,7 @@ export default function StepVideos() {
   const [proofOpen, setProofOpen] = useState(false);
 
   return (
-    <section id="video" className="relative pt-16 sm:pt-24 pb-16 sm:pb-24">
+    <section id="video" className="relative pt-12 sm:pt-16 pb-12 sm:pb-16">
       <div className="max-w-page mx-auto px-4 sm:px-6">
         <RevealOnScroll>
           <p className="font-mono text-[12px] tracking-[0.22em] uppercase text-teal mb-3">
@@ -134,24 +134,22 @@ export default function StepVideos() {
             </div>
           </RevealOnScroll>
 
-          <RevealOnScroll
-            delay={120}
-            className="card-brick overflow-hidden flex items-center justify-center min-h-[200px] sm:col-span-2 lg:col-span-3 border border-dashed border-line-strong"
-          >
-            <div className="flex flex-col items-center justify-center gap-5 px-6 py-10 text-center">
-              <span className="font-display text-text font-semibold text-[clamp(22px,2.4vw,30px)] leading-[1.2] max-w-[520px]">
+          {/* CTA di chiusura: niente reveal, sempre visibile */}
+          <div className="card-brick overflow-hidden sm:col-span-2 lg:col-span-3 border border-dashed border-line-strong">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-5 px-6 sm:px-8 py-7 text-center md:text-left">
+              <span className="font-display text-text font-semibold text-[clamp(20px,2.2vw,26px)] leading-[1.25]">
                 Vuoi anche tu un partner tecnologico che parla chiaro?
               </span>
               <a
                 href={ctaLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-full font-mono text-[12px] tracking-[0.18em] uppercase text-white bg-[#2563eb] hover:bg-[#1d4ed8] transition-colors"
+                className="shrink-0 inline-flex items-center justify-center px-6 py-3 rounded-full font-mono text-[12px] tracking-[0.18em] uppercase text-white bg-[#2563eb] hover:bg-[#1d4ed8] transition-colors"
               >
                 Prenota una call
               </a>
             </div>
-          </RevealOnScroll>
+          </div>
         </div>
       </div>
 

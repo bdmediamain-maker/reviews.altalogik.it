@@ -7,7 +7,7 @@ export default function StepCaseStudies() {
   return (
     <section
       id="case-study"
-      className="relative pt-16 sm:pt-24 pb-16 sm:pb-24 bg-bg-2"
+      className="relative pt-12 sm:pt-16 pb-12 sm:pb-16 bg-bg-2"
     >
       <div className="max-w-page mx-auto px-4 sm:px-6">
         <RevealOnScroll>
