@@ -34,22 +34,33 @@ export default function StepVideos() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 mt-12">
           {/* Messaggio scritto: apre la sezione e ne detta l'ordine */}
-          <RevealOnScroll className="card-brick overflow-hidden flex flex-col sm:col-span-2 p-6 sm:p-8">
-            <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+          <RevealOnScroll className="card-brick overflow-hidden sm:col-span-2 lg:col-span-3 p-6 sm:p-8">
+            <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
               <div className="flex-1 min-w-0">
                 <span className="inline-block font-mono text-[10px] tracking-[0.18em] uppercase text-muted bg-black/45 px-2 py-1 rounded-md">
                   {writtenReview.label}
                 </span>
-                <div className="font-display text-[20px] sm:text-[22px] font-semibold text-text mt-5">
+                <div className="font-display text-[20px] sm:text-[24px] font-semibold text-text mt-5">
                   {writtenReview.title}
                 </div>
                 <p className="text-[15px] sm:text-[16px] leading-[1.6] text-muted mt-3">
                   &ldquo;{writtenReview.quote}&rdquo;
                 </p>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 mt-6 pt-6 border-t border-line">
+                  {writtenReview.points.map((p) => (
+                    <li
+                      key={p}
+                      className="flex items-start gap-3 text-[14px] leading-[1.45] text-text"
+                    >
+                      <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               {/* Prova: screenshot del messaggio originale */}
-              <figure className="shrink-0 w-full max-w-[240px] mx-auto md:mx-0 md:w-[200px]">
+              <figure className="shrink-0 w-full max-w-[260px] mx-auto md:mx-0 md:w-[220px] lg:w-[250px]">
                 <button
                   type="button"
                   onClick={() => setProofOpen(true)}
@@ -65,23 +76,17 @@ export default function StepVideos() {
                     className="block w-full h-auto transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </button>
-                <figcaption className="flex items-center justify-between gap-2 mt-2 font-mono text-[10px] tracking-[0.16em] uppercase text-muted-2">
+                <figcaption className="flex items-center justify-between gap-2 mt-2 font-mono text-[10px] tracking-[0.16em] uppercase text-muted-2 whitespace-nowrap">
                   <span>{writtenReview.proofCaption}</span>
-                  <span className="text-teal">Ingrandisci</span>
+                  <span className="text-teal" aria-hidden="true">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="11" cy="11" r="7" />
+                      <path d="M21 21l-4.3-4.3M11 8v6M8 11h6" />
+                    </svg>
+                  </span>
                 </figcaption>
               </figure>
             </div>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 mt-6 pt-6 border-t border-line">
-              {writtenReview.points.map((p) => (
-                <li
-                  key={p}
-                  className="flex items-start gap-3 text-[14px] leading-[1.45] text-text"
-                >
-                  <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
-                  {p}
-                </li>
-              ))}
-            </ul>
           </RevealOnScroll>
 
           {videos.map((v, i) => {
@@ -131,7 +136,7 @@ export default function StepVideos() {
 
           <RevealOnScroll
             delay={120}
-            className="card-brick overflow-hidden flex items-center justify-center min-h-[260px] lg:col-span-2 border border-dashed border-line-strong"
+            className="card-brick overflow-hidden flex items-center justify-center min-h-[260px] border border-dashed border-line-strong"
           >
             <div className="flex flex-col items-center justify-center gap-5 px-6 py-10 text-center">
               <span className="font-display text-text font-semibold text-[clamp(22px,2.4vw,30px)] leading-[1.2] max-w-[520px]">

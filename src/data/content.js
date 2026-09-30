@@ -62,7 +62,7 @@ export const writtenReview = {
   ],
   // Prova: screenshot del messaggio originale ricevuto dal cliente
   proofUrl: "/reviews/messaggio-cliente.webp",
-  proofCaption: "Il messaggio originale",
+  proofCaption: "Messaggio originale",
 };
 
 export const videos = [
