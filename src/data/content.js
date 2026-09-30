@@ -60,6 +60,9 @@ export const writtenReview = {
     "Disponibilità e flessibilità nel confronto",
     "Buona competenza, anche sugli aspetti tecnici",
   ],
+  // Prova: screenshot del messaggio originale ricevuto dal cliente
+  proofUrl: "/reviews/messaggio-cliente.webp",
+  proofCaption: "Il messaggio originale",
 };
 
 export const videos = [

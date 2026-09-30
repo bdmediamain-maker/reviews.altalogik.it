@@ -3,9 +3,11 @@ import { videos, writtenReview, ctaLink } from "../data/content";
 import MediaSlot from "./MediaSlot";
 import RevealOnScroll from "./RevealOnScroll";
 import VideoModal from "./VideoModal";
+import ImageModal from "./ImageModal";
 
 export default function StepVideos() {
   const [active, setActive] = useState(null);
+  const [proofOpen, setProofOpen] = useState(false);
 
   return (
     <section id="video" className="relative pt-16 sm:pt-24 pb-16 sm:pb-24">
@@ -33,15 +35,42 @@ export default function StepVideos() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 mt-12">
           {/* Messaggio scritto: apre la sezione e ne detta l'ordine */}
           <RevealOnScroll className="card-brick overflow-hidden flex flex-col sm:col-span-2 p-6 sm:p-8">
-            <span className="self-start font-mono text-[10px] tracking-[0.18em] uppercase text-muted bg-black/45 px-2 py-1 rounded-md">
-              {writtenReview.label}
-            </span>
-            <div className="font-display text-[20px] sm:text-[22px] font-semibold text-text mt-5">
-              {writtenReview.title}
+            <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+              <div className="flex-1 min-w-0">
+                <span className="inline-block font-mono text-[10px] tracking-[0.18em] uppercase text-muted bg-black/45 px-2 py-1 rounded-md">
+                  {writtenReview.label}
+                </span>
+                <div className="font-display text-[20px] sm:text-[22px] font-semibold text-text mt-5">
+                  {writtenReview.title}
+                </div>
+                <p className="text-[15px] sm:text-[16px] leading-[1.6] text-muted mt-3">
+                  &ldquo;{writtenReview.quote}&rdquo;
+                </p>
+              </div>
+
+              {/* Prova: screenshot del messaggio originale */}
+              <figure className="shrink-0 w-full max-w-[240px] mx-auto md:mx-0 md:w-[200px]">
+                <button
+                  type="button"
+                  onClick={() => setProofOpen(true)}
+                  aria-label="Ingrandisci il messaggio originale"
+                  className="group relative block w-full overflow-hidden rounded-xl border border-line-strong"
+                >
+                  <img
+                    src={writtenReview.proofUrl}
+                    alt="Screenshot del messaggio originale inviato dal cliente"
+                    loading="lazy"
+                    width="411"
+                    height="500"
+                    className="block w-full h-auto transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                </button>
+                <figcaption className="flex items-center justify-between gap-2 mt-2 font-mono text-[10px] tracking-[0.16em] uppercase text-muted-2">
+                  <span>{writtenReview.proofCaption}</span>
+                  <span className="text-teal">Ingrandisci</span>
+                </figcaption>
+              </figure>
             </div>
-            <p className="text-[15px] sm:text-[16px] leading-[1.6] text-muted mt-3">
-              &ldquo;{writtenReview.quote}&rdquo;
-            </p>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 mt-6 pt-6 border-t border-line">
               {writtenReview.points.map((p) => (
                 <li
@@ -126,6 +155,13 @@ export default function StepVideos() {
           videoUrl={active.videoUrl}
           posterUrl={active.posterUrl}
           onClose={() => setActive(null)}
+        />
+      )}
+      {proofOpen && (
+        <ImageModal
+          src={writtenReview.proofUrl}
+          alt="Screenshot del messaggio originale inviato dal cliente"
+          onClose={() => setProofOpen(false)}
         />
       )}
     </section>
